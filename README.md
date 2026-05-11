@@ -5,12 +5,14 @@ A purpose-built Salesforce test automation toolkit: a Chrome extension that reco
 ## Why this exists
 
 Salesforce automation is hard:
+
 - Lightning Web Components hide everything behind Shadow DOM
 - IDs are auto-generated and change every render (`button-123`, `lightning-input-456`)
 - 3 release cycles per year regularly shift the DOM
 - Generic recorders (Selenium IDE, Playwright Codegen) produce brittle scripts
 
 `sfdc-recorder` solves this with:
+
 - **Salesforce-aware locators** — a layered strategy (test ids → labels → ARIA → relative XPath)
 - **Shadow DOM piercing** — the recorder walks shadow roots correctly
 - **Lightning + Classic detection** — picks the right strategy per page
@@ -20,12 +22,14 @@ Salesforce automation is hard:
 
 This is a pnpm monorepo. See each package for details.
 
-| Package | Description |
-|---|---|
-| [`@sfdc-recorder/extension`](./packages/extension) | Chrome MV3 extension — the recorder UI |
-| [`@sfdc-recorder/locator-engine`](./packages/locator-engine) | Salesforce-aware locator builder (Shadow DOM aware) |
-| [`@sfdc-recorder/codegen`](./packages/codegen) | Recording JSON → Playwright `.spec.ts` |
-| [`@sfdc-recorder/runner`](./packages/runner) | CLI for replaying recordings + managing sessions |
+
+| Package                                                      | Description                                         |
+| ------------------------------------------------------------ | --------------------------------------------------- |
+| `[@sfdc-recorder/extension](./packages/extension)`           | Chrome MV3 extension — the recorder UI              |
+| `[@sfdc-recorder/locator-engine](./packages/locator-engine)` | Salesforce-aware locator builder (Shadow DOM aware) |
+| `[@sfdc-recorder/codegen](./packages/codegen)`               | Recording JSON → Playwright `.spec.ts`              |
+| `[@sfdc-recorder/runner](./packages/runner)`                 | CLI for replaying recordings + managing sessions    |
+
 
 ## Quick start
 
@@ -59,7 +63,7 @@ pnpm build
 pnpm sfdc-rec gen ./my-story.recording.json -o tests/my-story.spec.ts
 ```
 
-7. Run it:
+1. Run it:
 
 ```bash
 pnpm sfdc-rec run tests/my-story.spec.ts
@@ -85,12 +89,12 @@ The previous top candidate is never deleted — only re-ranked — so you preser
 
 ## Roadmap
 
-- [x] **Phase 1 (MVP)**: Recorder + Codegen + Runner + Inline step editor
-- [x] **Phase 2**: Self-healing locators with `--heal off|report|apply` switch
-- [x] **Phase 3 (v2 schema)**: Iframe support · Salesforce field-type intelligence (picklist / multi-picklist / lookup / combobox / date / checkbox / file upload) · Robustness pack (toast/modal/spinner waits + retry-on-stale) · Assertion mode in recorder · Sub-flow groups · JSON data fixtures with `$VAR` substitution
-- [ ] **Phase 4**: Visual regression + screenshot-per-step diffing
-- [ ] **Phase 5**: Cloud dashboard + team-shared healing telemetry
-- [ ] **Phase 6**: CI/CD plugins (GitHub Actions, Azure Pipelines, Jenkins)
+- **Phase 1 (MVP)**: Recorder + Codegen + Runner + Inline step editor
+- **Phase 2**: Self-healing locators with `--heal off|report|apply` switch
+- **Phase 3 (v2 schema)**: Iframe support · Salesforce field-type intelligence (picklist / multi-picklist / lookup / combobox / date / checkbox / file upload) · Robustness pack (toast/modal/spinner waits + retry-on-stale) · Assertion mode in recorder · Sub-flow groups · JSON data fixtures with `$VAR` substitution
+- **Phase 4**: Visual regression + screenshot-per-step diffing
+- **Phase 5**: Cloud dashboard + team-shared healing telemetry
+- **Phase 6**: CI/CD plugins (GitHub Actions, Azure Pipelines, Jenkins)
 
 ## v2 highlights
 
@@ -152,3 +156,17 @@ pnpm lint            # eslint
 ## License
 
 MIT
+
+
+
+## Quick start
+
+git clone [https://github.com/nick7348/sfdc-recorder.git](https://github.com/nick7348/sfdc-recorder.git)
+
+cd sfdc-recorder
+
+pnpm install
+
+pnpm build
+
+pnpm sfdc-rec --help
