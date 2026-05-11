@@ -24,17 +24,20 @@ export function StepList({ steps, groups, editable, onEdit }: Props): JSX.Elemen
 
   return (
     <ol className="steps">
-      {steps.map((step, idx) => (
-        <StepRow
-          key={step.id}
-          step={step}
-          index={idx}
-          total={steps.length}
-          editable={editable}
-          group={step.groupId ? groupMap.get(step.groupId) : undefined}
-          onEdit={onEdit}
-        />
-      ))}
+      {steps.map((step, idx) => {
+        const group = step.groupId ? groupMap.get(step.groupId) : undefined;
+        return (
+          <StepRow
+            key={step.id}
+            step={step}
+            index={idx}
+            total={steps.length}
+            editable={editable}
+            onEdit={onEdit}
+            {...(group ? { group } : {})}
+          />
+        );
+      })}
     </ol>
   );
 }
