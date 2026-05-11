@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "SFDC Recorder",
+  "version": "0.1.0",
+  "description": "Record Salesforce user stories and auto-generate Playwright tests.",
+  "minimum_chrome_version": "116",
+  "permissions": ["storage", "scripting", "activeTab", "tabs"],
+  "host_permissions": [
+    "https://*.salesforce.com/*",
+    "https://*.force.com/*",
+    "https://*.visualforce.com/*",
+    "https://*.lightning.force.com/*",
+    "https://*.my.salesforce.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "SFDC Recorder",
+    "default_popup": "src/panel/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.salesforce.com/*",
+        "https://*.force.com/*",
+        "https://*.visualforce.com/*",
+        "https://*.lightning.force.com/*",
+        "https://*.my.salesforce.com/*"
+      ],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

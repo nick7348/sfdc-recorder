@@ -1,0 +1,25 @@
+{
+  "name": "@sfdc-recorder/extension",
+  "version": "0.1.0",
+  "description": "Chrome MV3 extension that records Salesforce user-story flows and exports recording JSON.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sfdc-recorder/locator-engine": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.3"
+  }
+}

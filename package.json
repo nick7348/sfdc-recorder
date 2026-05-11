@@ -1,0 +1,30 @@
+{
+  "name": "sfdc-recorder",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Record Salesforce user stories in Chrome and auto-generate Playwright test scripts.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "pnpm -r --filter \"./packages/*\" build",
+    "dev": "pnpm -r --parallel --filter \"./packages/*\" dev",
+    "lint": "eslint \"packages/*/src/**/*.{ts,tsx}\"",
+    "format": "prettier --write \"packages/*/src/**/*.{ts,tsx,json,md}\"",
+    "typecheck": "pnpm -r --filter \"./packages/*\" typecheck",
+    "test": "pnpm -r --filter \"./packages/*\" test --if-present",
+    "clean": "pnpm -r --filter \"./packages/*\" exec rimraf dist",
+    "sfdc-rec": "node ./packages/runner/dist/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^5.0.9",
+    "typescript": "^5.5.3"
+  }
+}

@@ -1,0 +1,35 @@
+node_modules/
+dist/
+build/
+.turbo/
+*.log
+*.tsbuildinfo
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Recordings & sessions (per-user)
+*.storageState.json
+recordings/local/
+session.json
+session.*.json
+.session/
+
+# Playwright HTML report
+packages/runner/playwright-report/
+packages/runner/test-results/

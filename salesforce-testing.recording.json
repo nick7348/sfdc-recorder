@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "name": "salesforce-testing",
+  "createdAt": "2026-05-07T10:50:58.171Z",
+  "startUrl": "https://lplone--qa.sandbox.lightning.force.com/lightning/o/Account/list?filterName=__Recent",
+  "context": "unknown",
+  "steps": [
+    {
+      "id": "42913e66-f7bc-497b-a358-e90a27f15e99",
+      "timestamp": 1778151060510,
+      "action": {
+        "type": "navigate",
+        "url": "https://lplone--qa.sandbox.lightning.force.com/lightning/o/Account/list?filterName=__Recent"
+      }
+    },
+    {
+      "id": "6f707363-572e-466e-90d2-8a6369843552",
+      "timestamp": 1778151066318,
+      "action": {
+        "type": "navigate",
+        "url": "https://lplone--qa.sandbox.lightning.force.com/lightning/o/Opportunity/home"
+      }
+    },
+    {
+      "id": "08922f53-eec4-46d2-a284-143c3d663f83",
+      "timestamp": 1778151066318,
+      "action": {
+        "type": "navigate",
+        "url": "https://lplone--qa.sandbox.lightning.force.com/lightning/o/Opportunity/list"
+      }
+    },
+    {
+      "id": "55c98d0d-060d-423d-8d2a-96113892bd5b",
+      "timestamp": 1778151067622,
+      "action": {
+        "type": "navigate",
+        "url": "https://lplone--qa.sandbox.lightning.force.com/lightning/o/Opportunity/list?filterName=__Recent"
+      }
+    },
+    {
+      "id": "636996fd-0831-4377-a13c-7536492cdc2a",
+      "timestamp": 1778151071568,
+      "action": {
+        "type": "navigate",
+        "url": "https://lplone--qa.sandbox.lightning.force.com/lightning/o/Opportunity/list?filterName=PRU_Sourced_Candidate_List"
+      }
+    }
+  ]
+}

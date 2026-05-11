@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "name": "create-account-with-contact",
+  "createdAt": "2026-05-07T12:00:00.000Z",
+  "startUrl": "https://example.lightning.force.com/lightning/o/Account/list",
+  "context": "lightning",
+  "steps": [
+    {
+      "id": "01",
+      "timestamp": 1714000000000,
+      "action": {
+        "type": "click",
+        "snapshot": {
+          "tagName": "button",
+          "shadowPath": ["lightning-button"],
+          "visibleText": "New",
+          "context": "lightning",
+          "candidates": [
+            { "kind": "ariaRole", "playwright": "getByRole(\"button\", { name: \"New\" })", "confidence": 0.85, "description": "role=button name=\"New\"" },
+            { "kind": "text", "playwright": "getByText(\"New\", { exact: true })", "confidence": 0.6, "description": "visible text \"New\"" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "02",
+      "timestamp": 1714000002000,
+      "action": {
+        "type": "input",
+        "value": "Acme Corp",
+        "snapshot": {
+          "tagName": "lightning-input",
+          "shadowPath": ["lightning-input"],
+          "visibleText": "",
+          "context": "lightning",
+          "candidates": [
+            { "kind": "label", "playwright": "getByLabel(\"Account Name\", { exact: true })", "confidence": 0.9, "description": "field labelled \"Account Name\"" },
+            { "kind": "ariaRole", "playwright": "getByRole(\"textbox\", { name: \"Account Name\" })", "confidence": 0.85, "description": "role=textbox name=\"Account Name\"" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "03",
+      "timestamp": 1714000004000,
+      "action": {
+        "type": "select",
+        "value": "Customer",
+        "snapshot": {
+          "tagName": "lightning-combobox",
+          "shadowPath": ["lightning-combobox"],
+          "visibleText": "",
+          "context": "lightning",
+          "candidates": [
+            { "kind": "label", "playwright": "getByLabel(\"Type\", { exact: true })", "confidence": 0.9, "description": "field labelled \"Type\"" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "04",
+      "timestamp": 1714000006000,
+      "action": {
+        "type": "click",
+        "snapshot": {
+          "tagName": "button",
+          "shadowPath": ["lightning-button"],
+          "visibleText": "Save",
+          "context": "lightning",
+          "candidates": [
+            { "kind": "ariaRole", "playwright": "getByRole(\"button\", { name: \"Save\" })", "confidence": 0.85, "description": "role=button name=\"Save\"" }
+          ]
+        }
+      }
+    }
+  ]
+}
