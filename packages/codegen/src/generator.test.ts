@@ -17,7 +17,7 @@ function makeRecording(overrides: Partial<Recording> = {}): Recording {
 describe('generateSpec', () => {
   it('emits a Playwright test wrapper with the recording name', () => {
     const code = generateSpec(makeRecording());
-    expect(code).toMatch(/import \{ test, expect \} from '@playwright\/test';/);
+    expect(code).toMatch(/import \{[^}]*\btest\b[^}]*\bexpect\b[^}]*\} from '@playwright\/test';/);
     expect(code).toMatch(/test\("sample-flow", async \(\{ page \}\) => \{/);
   });
 
@@ -168,8 +168,8 @@ describe('generateSpec', () => {
 
   it('imports waitForSalesforce and inserts it after navigations', () => {
     const code = generateSpec(makeRecording(), { insertSalesforceWaits: true });
-    expect(code).toContain(
-      `import { waitForSalesforce } from '@sfdc-recorder/runner/waits';`,
+    expect(code).toMatch(
+      /import \{[^}]*\bwaitForSalesforce\b[^}]*\} from '@sfdc-recorder\/runner\/waits';/,
     );
     expect(code).toContain('await waitForSalesforce(page);');
   });

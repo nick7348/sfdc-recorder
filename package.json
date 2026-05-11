@@ -13,7 +13,7 @@
     "lint": "eslint \"packages/*/src/**/*.{ts,tsx}\"",
     "format": "prettier --write \"packages/*/src/**/*.{ts,tsx,json,md}\"",
     "typecheck": "pnpm -r --filter \"./packages/*\" typecheck",
-    "test": "pnpm -r --filter \"./packages/*\" test --if-present",
+    "test": "pnpm -r --filter \"./packages/*\" --if-present run test",
     "clean": "pnpm -r --filter \"./packages/*\" exec rimraf dist",
     "sfdc-rec": "node ./packages/runner/dist/cli.js"
   },
